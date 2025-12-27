@@ -1,0 +1,1011 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+	font-size: 16px;
+}
+
+body {
+	min-width: 100vh;
+  margin: 0;
+  background-image: url('../imgs/banner/bg.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.float_right {
+  float: right;
+}
+
+.display_flex {
+  display: flex;
+}
+/*
+.header {
+    width: 100%;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    width: 90%; 
+    margin: 0 auto;
+    height: 60px; 
+}
+
+.menu-button, .icon-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    padding: 8px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s;
+    background-color: white;
+    margin-right: 10px;
+    height: 40px;
+    width: 40px;
+}
+
+.menu-button .material-icons {
+    font-size: 24px;
+}
+*/
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333; 
+  background-color: white;
+  padding: 10px 70px;
+  border-radius: 8px;
+  margin-right: 20px;
+  white-space: nowrap; 
+  background-image: url('../imgs/logo/bidvn.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+/*
+.main-nav {
+    display: flex;
+    flex-grow: 1; 
+}
+
+.nav-item {
+    color: #333;
+    padding: 8px 12px;
+    margin: 0 5px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-item:hover {
+    color: #000;
+}
+
+.nav-item.active {
+    font-weight: bold;
+}
+
+.icon-group {
+    display: flex;
+    margin-right: 20px;
+}
+
+.icon-group .icon-button {
+    margin-left: 5px;
+}
+
+.icon-button:hover {
+  background-color: #D8D8D8;
+  color: #000;
+}
+
+.icon-group .icon-button i {
+    font-size: 20px;
+    margin-bottom: -2px;
+}
+
+.signup-button {
+    border: none;
+    color: #333;
+    font-weight: 600;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.2s;
+}
+
+.login-button {
+  background-color: #333;
+  font-size: 16px;
+  border: none;
+  color: white;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 100px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+  transition: background-color 0.2s;
+}
+
+.login-button:hover {
+  background-color: #fff;
+  color: #000;
+}
+
+.login-button:hover {
+  opacity: 0.9;
+}
+*/
+
+.banner {
+  width: 100%;
+  height: 100px;
+  background-image: url('../imgs/banner/main_banner.jpeg');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.search {
+  position: relative;
+  width: 55%;
+  margin: -40px auto 0;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 12px;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search > i {
+  margin-left: 25px;
+  font-size: 20px;
+  color: #666;
+}
+
+.search input[type="text"] {
+  border: none;
+  outline: none;
+  line-height: 70px;
+  border-radius: 10px;
+  width: 50%;
+  padding: 5px 5px;
+  font-size: 18px;
+}
+
+.search input[type="submit"] {
+  border: none;
+  outline: none;
+  line-height: 56px;
+  border-radius: 8px;
+  padding: 5px 25px;
+  float: right;
+  max-width: 20%;
+  margin: 7px;
+  background-color: #ffc900;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search input[type="submit"]:hover {
+  opacity: .7;
+}
+
+#body {
+  margin-top: 60px!important;
+}
+
+/* Container bao bọc toàn bộ slider */
+.slider {
+  max-width: 1200px; /* Chiều rộng tối đa của slider */
+  position: relative;
+  margin: auto;
+  overflow: hidden; /* Quan trọng: ẩn các slide không hiển thị */
+  border-radius: 8px;
+}
+
+/* Khung chứa các ảnh (chỉ cần thiết lập kích thước) */
+.slides-container {
+    width: 100%; /* Nếu có 3 slide, width là 300%; nếu 4 slide là 400% */
+    height: auto;
+    display: flex; /* Xếp các slide con nằm ngang */
+    transition: transform 0.5s ease-in-out; /* HIỆU ỨNG: Chuyển động mượt trong 0.5 giây */
+    position: relative;
+    left: 0;
+}
+
+/* Định dạng từng slide */
+.slide {
+  width: 1200px; /* PHẢI khớp với max-width của .main-slider-wrapper */
+  flex-shrink: 0;
+}
+
+.slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Hiệu ứng chuyển cảnh (Fade/Mờ dần) */
+.fade {
+  animation-name: fadeAnimation;
+  animation-duration: 1.5s;
+}
+
+@keyframes fadeAnimation {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* ------------------ Nút Điều khiển ------------------ */
+
+.slider-control {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  background-color: rgba(255,255,255,0.5);
+  border: none;
+  z-index: 10;
+  opacity: .5;
+}
+
+.slider-control.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.slider-control.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.slider-control:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* ------------------ Thanh Chỉ báo (Dots) ------------------ */
+
+.dot-container {
+    text-align: center;
+    padding: 10px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 4px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dot.active {
+    background-color: #ffc900; /* Màu chủ đạo */
+}
+
+/* Container chính của danh mục */
+.category-container {
+  max-width: 1200px; /* Chiều rộng tối đa của khu vực danh mục */
+  margin: 0 auto;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Khung Flexbox chứa các danh mục */
+.category-grid {
+  display: flex;
+  flex-wrap: wrap; /* Cho phép các mục tự động xuống hàng */
+  justify-content: space-around; /* Căn đều các mục */
+}
+
+/* Từng mục danh mục */
+.category-item {
+  flex-basis: calc(20% - 10px); 
+  width: calc(20% - 10px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 15px 0;
+  text-decoration: none;
+  color: #333;
+  transition: opacity 0.2s;
+}
+
+.category-item:hover {
+    opacity: 0.8; /* Hiệu ứng khi di chuột */
+}
+
+/* Khung giả lập Icon (Hình chữ nhật màu xám) */
+.icon-placeholder {
+    width: 100px; /* Chiều rộng hình chữ nhật */
+    height: 100px;
+    border-radius: 4px; /* Bo góc nhẹ */
+    margin-bottom: 8px; /* Khoảng cách với tên danh mục */
+    background-color: #fff;
+    /* Căn giữa hình chữ nhật trong khung icon */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Khung giả lập Icon (Hình chữ nhật màu xám) */
+.icon-placeholder > img {
+    width: 100%; /* Chiều rộng hình chữ nhật */
+    border-radius: 4px; /* Bo góc nhẹ */
+    /* Căn giữa hình chữ nhật trong khung icon */
+}
+
+/* Tên danh mục */
+.category-name {
+    font-size: 14px;
+    line-height: 1.3;
+    /* Giới hạn số dòng và xử lý text tràn nếu cần */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Chỉ hiển thị tối đa 2 dòng */
+    -webkit-box-orient: vertical;
+    max-height: 2.6em; /* 2 dòng * 1.3 line-height */
+}
+
+/* Header (Dành cho bạn, Mới nhất, Video) */
+.product-header {
+    max-width: 1200px;
+    margin: 0 auto 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.header-link {
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 5px;
+    color: #555;
+    position: relative;
+}
+
+.header-link.active {
+    font-weight: 700;
+    color: #333;
+}
+
+/* Container chính của danh sách sản phẩm */
+.product {
+  width: 100%;
+	max-width: 1024px;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-list-container {
+    max-width: 1024px; /* Giới hạn chiều rộng */
+    margin: 0 auto;
+}
+
+/* Khung Flexbox chứa các sản phẩm */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap; /* Cho phép xuống hàng */
+    gap: 20px; /* Khoảng cách giữa các sản phẩm */
+}
+
+/* Từng mục sản phẩm */
+.product-item {
+    /* Tính toán chiều rộng cho 4 mục trên 1 hàng với gap là 20px */
+    flex-basis: calc(25% - 15px); 
+    width: calc(25% - 15px);
+    
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.2s;
+}
+
+.product-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Khung giả lập hình ảnh */
+.image-placeholder {
+  width: 100%; /* Chiều rộng hình chữ nhật */
+  height: 250px; /* Chiều cao hình chữ nhật */
+  border-radius: 4px; /* Bo góc nhẹ */
+  margin-bottom: 8px; /* Khoảng cách với tên danh mục */
+  /* Căn giữa hình chữ nhật trong khung icon */
+  display: flex;
+}
+
+/* Biểu tượng yêu thích (Trái tim) */
+.favorite-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white; /* Màu trắng trên nền ảnh */
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    padding: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* Phần thông tin dưới ảnh */
+.product-info {
+    padding: 10px;
+}
+
+.product-name {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    /* Xử lý text tràn giống như trong hình */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Giới hạn 2 dòng */
+    -webkit-box-orient: vertical;
+    height: 36px; /* Chiều cao cố định cho 2 dòng */
+}
+
+.product-des {
+    font-size: 16px;
+    font-weight: 500;
+    color: #666;font-style: italic;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ff3333; /* Màu đỏ cho giá */
+    margin-bottom: 10px;
+}
+
+/* Footer (Địa điểm và Thời gian) */
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: #888;
+}
+
+.location {
+    display: flex;
+    align-items: center;
+}
+
+.location-icon {
+    font-size: 14px;
+    margin-right: 2px;
+}
+
+/* INFO */
+.info {
+  width: 100%;
+  padding: 20px;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.about-container {
+    max-width: 1024px;
+    margin: 0 auto;
+    background-color: white; /* Nền trắng của khối nội dung */
+    border-radius: 8px;
+}
+
+.main-title {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+/* Kiểu chữ cho nội dung */
+.collapsible-content p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Mục tiêu dùng để chứa nội dung có thể thu gọn */
+.content-box {
+    position: relative;
+    /* Dùng JS để thêm class 'collapsed' và 'expanded' */
+}
+
+/* Trạng thái thu gọn */
+.content-box.collapsed .collapsible-content {
+    max-height: 180px; /* Chiều cao cố định khi thu gọn (khoảng 6-7 dòng) */
+    overflow: hidden;
+}
+
+/* Hiệu ứng làm mờ ở cuối nội dung thu gọn */
+.content-box.collapsed::after {
+    content: '';
+    position: absolute;
+    bottom: 35px; /* Đặt phía trên nút Mở rộng */
+    left: 0;
+    right: 0;
+    height: 60px; /* Độ dày của hiệu ứng làm mờ */
+    /* Tạo gradient làm mờ từ trắng trong suốt lên trắng đục */
+    background: linear-gradient(to top, white 20%, rgba(255, 255, 255, 0) 100%);
+    pointer-events: none; /* Cho phép tương tác với nội dung bên dưới */
+}
+
+/* Loại bỏ hiệu ứng làm mờ khi mở rộng */
+.content-box.expanded::after {
+    content: none;
+}
+
+
+/* Nút Mở rộng/Thu gọn */
+.expand-button {
+    background-color: white;
+    border: 1px solid #ccc;
+    color: #333;
+    font-weight: 600;
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    display: block; /* Chiếm toàn bộ chiều rộng (tùy theo thiết kế) */
+    width: 100px; /* Giới hạn chiều rộng nút như trong hình */
+    text-align: center;
+    margin-top: 5px; 
+    transition: background-color 0.2s;
+}
+
+.expand-button:hover {
+    background-color: #f0f0f0;
+}
+
+
+/* ==================================== */
+/* 1. LAYOUT VÀ OVERLAY CỦA MODAL (HỘP THOẠI) */
+/* ==================================== */
+
+.hidden {
+  display: none!important;
+}
+
+#popup-banner {
+    /* Mặc định được ẩn đi bằng class 'hidden' */
+    display: flex; /* BẮT BUỘC: Sử dụng flex để căn giữa */
+    justify-content: center;
+    align-items: center;
+}
+
+/* 2. Cấu trúc nội dung Popup */
+.modal-popup {
+    /* Đã tối ưu từ các lần trao đổi trước */
+    width: 90%; 
+    max-width: 650px; /* Điều chỉnh kích thước popup bạn muốn */
+    position: relative; /* Cho phép định vị absolute cho nút đóng */
+    padding: 0; /* Loại bỏ padding để nút đóng sát hình */
+    background: transparent; /* Nếu hình ảnh đã có nền */
+    border-radius: 8px; 
+    overflow: hidden; /* Quan trọng để hình ảnh không tràn ra ngoài border-radius */
+}
+
+/* 3. Hình ảnh Banner */
+.modal-popup img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* 4. Định vị nút Đóng (X) */
+.close-popup-btn {
+    position: absolute;
+    top: 5px; /* Điều chỉnh khoảng cách từ mép trên hình */
+    right: 5px; /* Điều chỉnh khoảng cách từ mép phải hình */
+    
+    /* Thiết kế nút đóng nổi bật trên banner */
+    color: #fff; 
+    font-size: 30px; 
+    border-radius: 50%; 
+    width: 35px;
+    height: 35px;
+    line-height: 1; 
+    z-index: 10;
+    
+    /* Căn chỉnh lại để khớp với thiết kế */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 3px; 
+    cursor: pointer;
+}
+
+.modal {
+    /* Ẩn mặc định */
+    display: flex; 
+    
+    /* Đặt Modal cố định và full màn hình */
+    position: fixed; 
+    z-index: 1000; /* Đảm bảo nó nằm trên cùng */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    
+    /* Nền đen mờ */
+    background-color: rgba(0, 0, 0, 0.4); 
+    
+    /* Căn giữa nội dung */
+    justify-content: center;
+    align-items: center;
+    animation: modal-slide-in 0.4s ease-out forwards;
+}
+
+/* ==================================== */
+/* 2. KHUNG NỘI DUNG CHÍNH CỦA MODAL */
+/* ==================================== */
+
+.modal-content {
+    background-color: #ffffff; /* Nền trắng */
+    padding: 20px;
+    border-radius: 12px; /* Góc bo tròn mềm mại */
+    width: 90%; /* Chiếm 90% chiều rộng trên di động */
+    max-width: 400px; /* Chiều rộng tối đa trên desktop */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3); /* Tạo hiệu ứng nổi */
+    position: relative;
+}
+
+/* ==================================== */
+/* 3. NÚT ĐÓNG MODAL (X) */
+/* ==================================== */
+
+.close-btn {
+    color: #888;
+    position: absolute; /* Đặt góc trên bên phải */
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1; /* Căn chỉnh vị trí chữ 'x' */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+/* ==================================== */
+/* 4. KIỂU CHO FORM ĐĂNG NHẬP/ĐĂNG KÝ */
+/* ==================================== */
+
+.auth-form h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.auth-form label {
+    display: block; /* Mỗi label trên một dòng mới */
+    font-size: 14px;
+    color: #555;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.auth-form input[type="email"],
+.auth-form input[type="password"],
+.auth-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Quan trọng để padding không làm tăng chiều rộng */
+    font-size: 16px;
+}
+
+.auth-form input:focus {
+    border-color: #ffc107; /* Màu vàng nổi bật khi focus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 193, 7, 0.3);
+}
+
+.auth-form button[type="button"],
+.auth-form button[type="submit"] {
+    width: 100%;
+    background-color: #ffc107; /* Màu nền vàng nổi bật */
+    color: #333; /* Chữ màu tối */
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.signup-btn {
+    background-color: #f4f4f4!important; /* Màu nền vàng nổi bật */
+}
+
+.auth-form button[type="button"]:hover {
+    background-color: #e8e8e8!important; /* Màu vàng nhạt hơn khi hover */
+}
+
+.auth-form button[type="submit"]:hover {
+    background-color: #ffcd38; /* Màu vàng nhạt hơn khi hover */
+}
+
+/* ==================================== */
+/* 5. CLASS ẨN DÙNG TRONG JS */
+/* ==================================== */
+@keyframes modal-slide-in {
+    /* 0%: Trạng thái bắt đầu (Ẩn và nằm trên) */
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    /* 100%: Trạng thái kết thúc (Hiện và ở giữa) */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.action-btn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 25px; /* Góc bo tròn */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+/* 1. Nút khi ĐÃ ĐĂNG NHẬP (Quản lý tin) */
+.logged-in-btn {
+	margin-right: 10px;
+    background-color: #fff;
+    color: #333;
+}
+
+.logged-in-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* 2. Nút Đăng tin (Nền đen) */
+.post-btn {
+    background-color: #222; /* Màu nền đen hoặc rất đậm */
+    color: #fff;
+}
+
+.post-btn:hover {
+    background-color: #444;
+}
+
+/* 3. Khu vực Avatar và Dropdown */
+.user-dropdown-area {
+	position: relative;
+    padding: 5px 10px 5px 3px;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 5px 10px 5px 3px;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.user-profile:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-arrow {
+    font-size: 12px;
+    color: #555;
+    margin-left: 5px;
+}
+
+.user-profile > i {
+	font-size: 30px;
+}
+
+.user-btn {
+  	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+    color: #333;
+    font-size: 16px;
+    font-weight: 600;
+	margin-left: 2px;
+}
+
+.user-dropdown-area:hover .dropdown-content {
+	display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-content {
+    display: none; /* Sẽ được thay thế bằng class .hidden nếu bạn dùng JS */
+    position: absolute;
+    top: 100%; /* Đặt ngay dưới khối user-profile */
+    right: 10px; /* Căn lề phải của menu khớp với lề phải của user-dropdown-area */
+    
+    /* Thiết kế Menu */
+    background-color: #fff;
+    width: calc(100% - 10px); /* Chiều rộng tối thiểu cho menu */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    padding: 10px 0;
+    z-index: 2000; /* Đảm bảo nó nằm trên tất cả các thành phần khác */
+    border: 1px solid #eee;
+    animation: user-slide-in 0.2s ease-out forwards;
+}
+
+.dropdown-content a,
+.dropdown-content input {
+	background-color: white;
+	border: none;
+	display: block;
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.dropdown-content input {
+	width: 100%;
+	cursor: pointer;
+	text-align: left;
+}
+
+.dropdown-content a:hover,
+.dropdown-content input:hover {
+    background-color: #f7f7f7; /* Highlight khi di chuột */
+    color: #ffc900; /* Màu vàng chủ đạo khi hover */
+}
+
+@keyframes user-slide-in {
+    /* 0%: Trạng thái bắt đầu (Ẩn và nằm trên) */
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    /* 100%: Trạng thái kết thúc (Hiện và ở giữa) */
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.signinerror {
+    border: 2px solid red !important; /* Viền đỏ nổi bật */
+	outline: none !important;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Tạo hiệu ứng lỗi */
+}
+
+/* Định nghĩa màu và kiểu dáng cho hộp lỗi */
+.error-box {
+    /* Đặt style chung */
+    background-color: #ffeaea; /* Nền hồng nhạt */
+    border: 1px solid #ff9999; /* Viền hồng/đỏ */
+    border-radius: 8px; /* Bo tròn góc */
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex; /* Dùng flex để căn chỉnh icon và chữ */
+    align-items: center;
+    font-size: 14px;
+    color: #333; /* Màu chữ */
+}
+
+/* Kiểu dáng cho icon cảnh báo */
+.error-box i {
+    color: #ff0000; /* Màu đỏ cho icon */
+    font-size: 20px;
+    margin-right: 10px;
+    /* Đảm bảo bạn đã include thư viện Font Awesome (fas fa-exclamation-triangle) */
+}
+
+/* Kiểu dáng cho đoạn văn bản trong box */
+.error-box p {
+    margin: 0; /* Xóa margin mặc định của thẻ p */
+    line-height: 1.5;
+}
+
+.separator-text {
+    /* 1. Kích hoạt Flexbox và căn giữa */
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0; /* Tạo khoảng trống trên và dưới */
+    color: #999; /* Màu chữ xám nhạt */
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.separator-text span {
+    /* 2. Tạo khoảng cách giữa chữ 'Hoặc' và gạch ngang */
+    padding: 0 15px; 
+    white-space: nowrap; /* Ngăn chữ 'Hoặc' bị ngắt dòng */
+}
+
+/* 3. Tạo đường gạch ngang bên trái */
+.separator-text::before {
+    content: '';
+    flex-grow: 1; /* Cho phép đường gạch chiếm hết khoảng trống còn lại */
+    height: 1px;
+    background-color: #ddd; /* Màu gạch ngang xám nhạt */
+    margin-right: 15px; /* Đẩy gạch ngang ra xa chữ 'Hoặc' */
+}
+
+/* 4. Tạo đường gạch ngang bên phải */
+.separator-text::after {
+    content: '';
+    flex-grow: 1; /* Cho phép đường gạch chiếm hết khoảng trống còn lại */
+    height: 1px;
+    background-color: #ddd;
+    margin-left: 15px; /* Đẩy gạch ngang ra xa chữ 'Hoặc' */
+}
+
+.test {
+	color: red;
+}

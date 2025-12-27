@@ -1,0 +1,87 @@
+/* Container chính của form */
+.thongke_container {
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 12px;
+}
+
+.locThongKe-container {
+    display: flex; /* Sắp xếp các phần tử trên cùng một hàng */
+    align-items: center; /* Căn giữa theo chiều dọc */
+    gap: 15px; /* Khoảng cách giữa các phần tử */
+    padding: 15px 20px;
+    background-color: #fff; /* Nền xám nhạt */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    flex-wrap: wrap; /* Cho phép xuống dòng nếu màn hình nhỏ */
+    margin-bottom: 20px;
+}
+
+/* Định dạng chung cho Label */
+.locThongKe-container label {
+    font-weight: 500;
+    color: #444;
+    font-size: 15px;
+    white-space: nowrap; /* Giữ label trên cùng một hàng */
+}
+
+/* Định dạng chung cho Select và Input */
+.locThongKe-container select,
+.locThongKe-container input[type="date"],
+.locThongKe-container input[type="text"] {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    background-color: #fff;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.locThongKe-container select:focus,
+.locThongKe-container input[type="date"]:focus {
+    border-color: #007bff; /* Màu xanh khi focus */
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+}
+
+/* Định dạng cho các khối input tùy chọn */
+.thongke-input {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Định dạng Nút Thống kê */
+.locThongKe-container input[type="submit"] {
+    background-color: #ffc900; /* Màu xanh nổi bật */
+    color: #333;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.2s;
+}
+
+.locThongKe-container input[type="submit"]:hover {
+    opacity: .8;
+}
+
+/* Xử lý cho khối "Tự chọn" (Custom) */
+#custom-input-block {
+    /* Đảm bảo căn chỉnh input và label */
+    gap: 10px;
+}
+
+#custom-input-block input[type="date"] {
+    /* Cho input date có chiều rộng cố định để đồng bộ */
+    width: 140px; 
+}
+
+/* Tinh chỉnh cho select box */
+#thongke_select {
+    width: 140px; 
+}

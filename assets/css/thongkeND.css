@@ -1,0 +1,184 @@
+/* --- TỔNG QUAN VÀ NỀN --- */
+#main-content {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font hiện đại hơn */
+    background-color: #f0f2f5; /* Màu nền rất nhẹ */
+    border-radius: 12px;
+	min-width: 1000px;
+}
+
+.dashboard-title {
+    color: #1e3a5f; /* Màu chữ đậm, chuyên nghiệp */
+    margin-bottom: 25px;
+    border-bottom: 2px solid #e0e0e0; /* Đường kẻ mỏng hơn, nhẹ hơn */
+    padding-bottom: 15px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* --- 1. KPI Cards (Nổi bật hơn) --- */
+.kpi-cards-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.kpi-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 25px;
+    background-color: #ffffff;
+    border-radius: 12px; /* Góc bo tròn hơn */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+/*
+    min-width: 220px;
+	max-width: 400px;
+*/
+    cursor: pointer;
+}
+
+/* Hiệu ứng Hover sống động */
+.kpi-card:hover {
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); 
+}
+
+.kpi-icon {
+	width: 50px;
+	height: 50px;
+    margin-right: 18px;
+    line-height: 1;
+}
+
+.kpi-icon > img {
+	width: 100%;
+}
+
+/* Tùy chỉnh màu icon theo nội dung để sống động hơn */
+.kpi-card:nth-child(1) .kpi-icon { color: #007bff; } /* Tổng ND - Xanh dương */
+.kpi-card:nth-child(2) .kpi-icon { color: #28a745; } /* Hoạt động - Xanh lá */
+.kpi-card:nth-child(3) .kpi-icon { color: #ffc107; } /* Mới - Vàng */
+.kpi-card:nth-child(4) .kpi-icon { color: #dc3545; } /* Đặt giá - Đỏ/Cam */
+
+
+.kpi-value {
+    font-size: 32px; /* Giá trị lớn, dễ đọc */
+    font-weight: 700;
+    color: #1e3a5f;
+}
+
+.kpi-label {
+    font-size: 13px;
+    color: #6c757d;
+    margin-top: 2px;
+}
+
+/* --- 2. Biểu đồ Phân tích --- */
+.charts-container {
+    display: flex;
+    gap: 25px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.chart-box {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Bóng mềm */
+    flex: 2;
+    min-height: 400px; /* Tăng chiều cao tối thiểu */
+    position: relative; 
+}
+
+.small-chart {
+    flex: 1;
+}
+
+.chart-title, .table-title {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #f0f0f0; /* Đường kẻ rất mỏng */
+    padding-bottom: 10px;
+}
+
+/* --- 3. Bảng Dữ liệu Chi tiết (Dễ đọc hơn) --- */
+.detail-table-container {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow-x: auto;
+    margin-bottom: 15px;
+}
+
+/* 1. Đảm bảo cột Hạng (cột đầu tiên) có font cố định và canh giữa */
+.detail-table-container table td:nth-child(1) {
+    font-family: 'Arial Black', sans-serif; /* Font nổi bật hơn */
+    font-weight: 900;
+    text-align: center;
+    color: #444;
+    transition: font-size 0.3s ease; /* Hiệu ứng chuyển đổi mềm mại */
+}
+
+/* 2. Định kiểu riêng cho các Hạng (Top 3) */
+
+/* Hạng 1: Lớn nhất và Nổi bật nhất (Ví dụ: Màu vàng BIDVN) */
+.detail-table-container table tbody tr:nth-child(1) td:nth-child(1) {
+    font-size: 1.8em; /* Kích thước to nhất */
+    color: #ffc900; /* Màu vàng nổi bật */
+    text-shadow: 0 0 5px rgba(255, 201, 0, 0.5);
+}
+
+/* Hạng 2: Kích thước nhỏ hơn Hạng 1 */
+.detail-table-container table tbody tr:nth-child(2) td:nth-child(1) {
+    font-size: 1.5em; 
+    color: #a7a9ac; /* Màu bạc */
+}
+
+/* Hạng 3: Kích thước nhỏ hơn Hạng 2 */
+.detail-table-container table tbody tr:nth-child(3) td:nth-child(1) {
+    font-size: 1.2em; 
+    color: #cd7f32; /* Màu đồng */
+}
+
+/* Hạng 4 trở đi: Kích thước bình thường */
+.detail-table-container table tbody tr:nth-child(n+4) td:nth-child(1) {
+    font-size: 1em; 
+    color: #666;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 15px 18px; /* Tăng padding */
+    text-align: left;
+    border-bottom: 1px solid #eee; /* Đường kẻ mỏng, nhạt */
+    font-size: 14px;
+}
+
+thead th {
+    background-color: #f7f9fc; /* Đầu bảng màu xanh nhạt */
+    color: #333;
+    font-weight: 700;
+	text-align: center;
+}
+
+tbody tr:hover {
+    background-color: #e9f7ff; /* Hiệu ứng hover màu xanh nhẹ */
+}
+
+/* Căn chỉnh cột số liệu */
+td:nth-child(3), td:nth-child(4), td:nth-child(5), td:nth-child(6) {
+    text-align: right;
+    font-weight: 500;
+}

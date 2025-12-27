@@ -1,0 +1,530 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: 'Inter', sans-serif;
+	height: 100vh;
+	display: flex; /* Bố cục Flex cho toàn bộ trang */
+	background-color: #f4f7f9; /* Màu nền nhẹ */
+}
+
+a {
+	text-decoration: none;
+}
+
+.logout-btn > input {
+	border: none;
+	display: block;
+    color: #333;
+    padding: 10px 15px;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* --------------------------------- */
+/* 1. SIDEBAR (THANH BÊN) - Màu chủ đạo: Xanh Tím Than */
+/* --------------------------------- */
+#sidebar {
+	width: 256px; /* 256px = 16rem (W-64 trong Tailwind) */
+	flex-shrink: 0;
+	background-color: #ffc900;
+	color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 4px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo/Tiêu đề */
+#sidebar .logo-area {
+	margin: 10px;  
+	padding-top: 4px;
+	border-radius: 10px;
+	font-size: 24px;
+	font-weight: 800;
+	height: 64px; /* Đồng bộ với chiều cao Header */
+	background-color: #fff;
+	overflow: hidden;
+}
+
+.logo-area-img {
+	background-color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 64px; /* Đồng bộ với chiều cao Header */
+	background-image: url('../imgs/logo/bidvn.jpeg');
+	background-size: cover;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+/* Menu điều hướng */
+#sidebar nav {
+	background-color: #1D1D1D;
+	flex-grow: 1;
+	padding: 16px;
+	overflow-y: auto;
+}
+
+#sidebar nav .sidebar-item {
+	display: flex;
+	align-items: center;
+	padding: 12px;
+	margin-bottom: 4px;
+	border-radius: 8px;
+	text-decoration: none;
+	color: #e8eaf6; /* Màu chữ nhạt */
+	transition: background-color 0.2s, color 0.2s;
+}
+
+#sidebar nav .sidebar-item > img {
+	margin-right: 12px;
+	font-size: 20px;
+	width: 20px;
+}
+
+#sidebar nav .sidebar-item > i {
+	margin-right: 12px;
+	font-size: 20px;
+	color: #fff;
+}
+
+/* Trạng thái Active */
+#sidebar nav .sidebar-item.active {
+	background-color: #ffc900;
+	color: #1d1d1d;
+	font-weight: 600;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Trạng thái Hover */
+#sidebar nav .sidebar-item:not(.active):hover {
+	background-color: #ccc;
+	color: #7D7D7D;
+}
+
+/* Tiêu đề nhóm chức năng */
+#sidebar nav .menu-group-title {
+	display: block;
+	font-size: 10px;
+	color: #c5cae9; /* Màu chữ nhạt hơn */
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	padding: 16px 12px 4px 12px;
+}
+
+/* Thông tin User Admin */
+#sidebar .admin-info {
+	padding: 16px;
+	border-top: 1px solid #303f9f;
+	display: flex;
+	align-items: center;
+}
+
+#sidebar .admin-info .avatar {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	background-color: #7986cb;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	font-size: 16px;
+	margin-right: 12px;
+}
+
+#sidebar .admin-info .details p:first-child {
+	font-size: 14px;
+	font-weight: 600;
+}
+
+#sidebar .admin-info .details p:last-child {
+	font-size: 12px;
+	color: #9fa8da;
+}
+
+/* --------------------------------- */
+/* 2. MAIN CONTENT (PHẦN CÒN LẠI) */
+/* --------------------------------- */
+#main-content {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+	min-width: 1000px;
+}
+
+/* Header Top Bar */
+#main-content header {
+	min-height: 84px;
+	background-color: #ffffff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 24px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+#main-content header h1 {
+	font-size: 24px;
+	font-weight: 600;
+	color: #212121;
+}
+
+/* Nút Đăng xuất */
+#main-content header .logout-btn {
+	display: flex;
+	align-items: center;
+	padding: 10px 16px;
+	border-radius: 8px;
+	background-color: #e53935; /* Màu đỏ */
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+	text-decoration: none;
+	font-size: 16px;
+	font-weight: 500;
+	transition: background-color 0.2s;
+}
+
+#main-content header .logout-btn:hover {
+	background-color: #c62828;
+}
+
+#main-content header .logout-btn i {
+	margin-right: 8px;
+	font-size: 20px;
+	margin-top: -2px;
+}
+
+/* Content Area (Để trống) */
+#main-content main {
+	flex-grow: 1;
+	padding: 24px;
+	overflow-y: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-width: 1000px;
+}
+
+#main-content .empty-state {
+	text-align: center;
+	padding: 40px;
+	background-color: #ffffff;
+	border-radius: 12px;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+	color: #616161;
+}
+
+#main-content .empty-state i {
+	font-size: 48px;
+	color: #7986cb;
+	margin-bottom: 16px;
+}
+
+#main-content .empty-state h2 {
+	font-size: 24px;
+	font-weight: 700;
+	margin-bottom: 8px;
+}
+
+#content-area {
+	max-width: 100%;
+}
+
+/* CSS cho phần chứa nút */
+.crud-buttons-container {
+    margin-bottom: 20px; /* Tạo khoảng cách với bảng bên dưới */
+    padding: 10px 0;
+    /* Tùy chọn: Nếu muốn căn phải các nút */
+    /* text-align: right; */
+}
+
+/* CSS cơ bản cho các nút (nếu không dùng Bootstrap) */
+.crud-btns {
+	display: inline-block;
+    padding: 10px 15px 8px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.crud-btns.disabling {
+	cursor: default;
+	opacity: .3;
+}
+
+.crud-btns.disabling:hover {
+	opacity: .3;
+	transform: scale(1);
+}
+
+.crud-btns:hover {
+	opacity: .8;
+	transform: scale(1.1);
+}
+
+/* Các màu sắc cơ bản */
+.btn-primary { /* Thêm mới */
+    background-color: #007bff;
+    color: white;
+}
+.btn-success { /* Xem/Read */
+    background-color: #28a745;
+    color: white;
+}
+.btn-warning { /* Chỉnh sửa/Update */
+    background-color: #ffc107;
+    color: #333;
+}
+.btn-danger { /* Xóa/Delete */
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Kiểu cho icon */
+.btn i {
+    margin-right: 5px;
+}
+
+.table-container {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #ffffff;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.data-table {
+	width: 100%;
+	border-collapse: collapse; /* Gộp các đường viền lại */
+}
+
+/* ----------------------- */
+/* Định dạng HEADER (Tiêu đề cột) */
+/* ----------------------- */
+.data-table thead tr {
+	background-color: #f0f0f0; /* Màu nền xám nhạt cho tiêu đề */
+	border-bottom: 1px solid #c5c5c5;
+}
+
+.data-table th {
+	text-align: left;
+	padding: 10px 15px;
+	font-size: 14px;
+	font-weight: 600;
+	color: #333;
+	white-space: nowrap; /* Ngăn tiêu đề bị xuống dòng */
+	border-right: 1px solid #e0e0e0; /* Kẻ dọc giữa các cột tiêu đề */
+	line-height: 1.2;
+}
+
+.data-table th:last-child {
+	border-right: none;
+}
+
+
+/* ----------------------- */
+/* Định dạng BODY (Nội dung) */
+/* ----------------------- */
+.data-table tbody tr {
+	border-bottom: 1px solid #e0e0e0;
+	transition: background-color 0.15s;
+}
+
+.data-table tbody tr:hover {
+	background-color: #f9f9f9;
+}
+
+.data-table tbody tr:last-child {
+	border-bottom: none;
+}
+
+.user-row.selected-row {
+	background-color: #ffc900;
+	font-weight: 600;
+}
+
+.user-row.selected-row:hover {
+	background-color: #ffc900;
+}
+
+.data-table td {
+	padding: 8px 15px;
+	font-size: 14px;
+	color: #444;
+	border-right: 1px solid #f0f0f0; /* Kẻ dọc nhẹ hơn cho nội dung */
+}
+
+.data-table td:last-child {
+	 border-right: none;
+}
+
+/* Định dạng cột cụ thể theo yêu cầu hình ảnh */
+.data-table .col-mand,
+.data-table .col-username,
+.data-table .col-sdt,
+.data-table .col-trangthai {
+	white-space: nowrap;
+}
+
+.data-table .col-hoten {
+	min-width: 120px;
+}
+
+.data-table .col-diachi {
+	min-width: 200px;
+}
+
+/* Dòng kẻ xám lớn ở cuối bảng */
+.separator-row {
+	height: 15px;
+	background-color: #f0f0f0;
+}
+
+.update-form-container {
+	min-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.update-form-container h2 {
+    border-bottom: 2px solid #eee;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+    color: #343a40;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Quan trọng: để padding không làm tăng chiều rộng */
+}
+
+.form-group input:read-only {
+    background-color: #f8f9fa;
+    cursor: not-allowed;
+}
+
+.form-actions input,
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.update-btn-primary {
+	display: inline-block;
+    background-color: #ffc900;
+	padding: 10px 20px;
+	border-radius: 5px;
+    color: #333;
+	font-weight: bold;
+	transition: all .2s ease;
+}
+
+.update-btn-secondary:hover,
+.update-btn-primary:hover {
+	opacity: .8;
+}
+
+.update-btn-secondary {
+	padding: 10px 20px;
+  	border-radius: 5px;
+    background-color: #6c757d;
+    color: white;
+	transition: all .2s ease;
+}
+
+/* Container chứa tất cả các Toast */
+.toast-ui-container {
+    position: fixed;
+    bottom: 20px; /* Cách đáy 20px */
+    right: 20px; /* Cách lề phải 20px */
+    z-index: 9999; /* Đảm bảo nó nằm trên tất cả mọi thứ */
+    display: flex;
+    flex-direction: column; /* Xếp các toast theo chiều dọc */
+    gap: 10px; /* Khoảng cách giữa các toast */
+    pointer-events: none; /* Cho phép click xuyên qua container */
+}
+
+/* Kiểu dáng chung cho Toast */
+.toast-ui-message {
+    padding: 15px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    min-width: 300px;
+    opacity: 0; /* Bắt đầu ẩn */
+    transform: translateX(100%); /* Bắt đầu ở ngoài màn hình */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    pointer-events: auto; /* Cho phép tương tác với toast (nếu muốn) */
+}
+
+/* Toast khi hiển thị */
+.toast-ui-message.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Kiểu dáng cho từng loại Toast */
+/* Thành công (Success) */
+.toast-ui-success {
+    background-color: #4CAF50; /* Xanh lá */
+}
+
+/* Lỗi (Error) */
+.toast-ui-error {
+    background-color: #F44336; /* Đỏ */
+}
+
+/* Cảnh báo (Warning) */
+.toast-ui-warning {
+    background-color: #FF9800; /* Cam */
+}
+
+/* Thông tin (Info) */
+.toast-ui-info {
+    background-color: #2196F3; /* Xanh dương */
+}
+
+/* Icon (Bạn cần Font Awesome cho các icon) */
+.toast-ui-message i {
+    margin-right: 10px;
+    font-size: 18px;
+}

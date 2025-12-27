@@ -1,0 +1,395 @@
+#body
+{
+	min-height: 100vh;
+	margin-top: 60px;
+}
+
+/* Thiết lập cơ bản */
+.cart-ui-wrapper * {
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-ui-wrapper {
+	margin-top: 60px;
+    font-family: Arial, sans-serif;
+  padding-bottom: 80px; /* Khoảng trống cho thanh tổng kết cố định */
+    color: #333;
+    min-width: 1200px; /* Chiều rộng tối thiểu cho giao diện desktop */
+}
+
+/* --- Header & Search Bar --- */
+.cart-ui-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 100px;
+    background-color: #fff;
+    border-bottom: 4px solid #ffc900;
+	margin-top: 60px;
+}
+
+.cart-ui-logo-area {
+    display: flex;
+    align-items: center;
+}
+
+.cart-ui-logo {
+    font-size: 2rem;
+    color: #ee4d2d;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+.cart-ui-title {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.cart-ui-search-bar {
+    display: flex;
+    width: 400px;
+    border: 2px solid #ee4d2d;
+    height: 35px;
+}
+
+.cart-ui-search-bar input {
+    flex-grow: 1;
+    padding: 0 10px;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.cart-ui-search-btn {
+    width: 40px;
+    background-color: #ffc900;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* --- Cart Container --- */
+.cart-ui-container {
+    width: 1200px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+/* 1. Header Bảng */
+.cart-ui-table-header, .cart-ui-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.cart-ui-table-header {
+    background-color: #fffafb;
+    color: #888;
+    font-weight: 500;
+    padding: 15px 0;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+/* Chiều rộng cột */
+.cart-ui-col { padding: 0 10px; }
+.cart-ui-col-product { flex-basis: 42%; }
+.cart-ui-col-price-unit { flex-basis: 15%; text-align: center; }
+.cart-ui-col-quantity { flex-basis: 15%; text-align: center; }
+.cart-ui-col-total-price { flex-basis: 15%; text-align: center; color: #333; font-weight: 600; }
+.cart-ui-col-action { flex-basis: 13%; text-align: center; }
+
+
+/* 2. Shop & Item Styling */
+.cart-ui-shop {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+
+.cart-ui-shop-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    font-weight: 500;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.cart-ui-checkbox-shop {
+    margin-right: 10px;
+}
+
+.cart-ui-favorite-tag {
+    background-color: #ffc900;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 5px;
+    border-radius: 2px;
+    margin-right: 10px;
+    font-weight: normal;
+}
+
+.cart-ui-item {
+    border: 1px solid #f3f3f3;
+    margin-bottom: 10px;
+    background-color: #fff;
+    padding: 15px 0;
+}
+
+.cart-ui-item-disabled {
+    background-color: #fcfcfc;
+    opacity: 0.6;
+}
+
+.cart-ui-product-info {
+    display: flex;
+    align-items: flex-start;
+    margin-left: 20px;
+}
+
+.cart-ui-product-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid #eee;
+    margin-right: 10px;
+}
+
+.cart-ui-product-name {
+    margin: 0 0 5px 0;
+    font-size: 0.9rem;
+    line-height: 1.3;
+    max-width: 250px;
+}
+
+.cart-ui-tag-status {
+    display: inline-block;
+    color: #fff;
+    font-size: 0.65rem;
+    padding: 1px 4px;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+.cart-ui-tag-soldout { background-color: #999; }
+.cart-ui-tag-new { background-color: #00bfa5; } /* Giả lập tag MỚI/Hot */
+
+.cart-ui-variant-disabled, .cart-ui-variant-info {
+    color: #777;
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+/* Quantity Controls */
+.cart-ui-quantity-controls {
+    display: flex;
+    justify-content: center;
+}
+.cart-ui-qty-input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    height: 30px;
+    margin: 0 -1px;
+    outline: none;
+    font-size: 0.9rem;
+}
+.cart-ui-qty-btn {
+    background: #fff;
+    border: 1px solid #ccc;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #555;
+}
+
+.cart-ui-quantity-display {
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.cart-ui-low-stock {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 5px;
+    font-weight: normal;
+}
+
+.cart-ui-price-active {
+    font-weight: 500;
+}
+
+.cart-ui-delete-btn {
+    background: none;
+    border: none;
+    color: #777;
+    cursor: pointer;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+}
+.cart-ui-delete-btn:hover {
+    opacity: .8;
+}
+
+.cart-ui-find-similar {
+    font-size: 0.75rem;
+    color: #05a;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* Shop Footer (Voucher) */
+.cart-ui-shop-voucher-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px 0 0 20px;
+    border-top: 1px solid #eee;
+}
+.cart-ui-voucher-text {
+    font-size: 0.85rem;
+    color: #333;
+    margin-left: 10px;
+}
+.cart-ui-voucher-link {
+    font-size: 0.85rem;
+    color: #05a;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+/* Shipping Discount */
+.cart-ui-shipping-promo {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #e8f9fd; /* Nền xanh nhạt */
+    border: 1px solid #b3e5fc;
+    font-size: 0.9rem;
+    margin: 20px 0;
+    color: #00bfa5;
+    font-weight: 500;
+}
+.cart-ui-promo-icon {
+    font-size: 1.2rem;
+    margin-right: 10px;
+}
+.cart-ui-learn-more {
+    color: #05a;
+    text-decoration: none;
+    margin-left: auto;
+    font-weight: 400;
+}
+
+
+/* --- Footer Tổng kết (Sticky) --- */
+.cart-ui-summary-sticky {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    box-shadow: 0 -2px 5px rgba(0,0,0,.05);
+    padding: 10px 100px;
+    box-sizing: border-box;
+}
+
+.cart-ui-summary-left {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.cart-ui-check-all-label, .cart-ui-link-action {
+    margin-right: 20px;
+    color: #333;
+    cursor: pointer;
+}
+
+.cart-ui-inactive-products {
+    color: #999;
+}
+
+.cart-ui-link-move-to {
+    color: #05a;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.cart-ui-summary-right {
+    display: flex;
+    align-items: center;
+}
+
+.cart-ui-voucher-line {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.cart-ui-voucher-text-main {
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.cart-ui-apply-voucher-btn {
+    background: none;
+    border: none;
+    color: #05a;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.cart-ui-shopee-xu span {
+    color: #999;
+}
+.cart-ui-xu-amount {
+    color: #ee4d2d !important;
+    margin-left: 5px;
+}
+
+.cart-ui-total-section {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
+.cart-ui-total-text {
+    font-size: 0.9rem;
+}
+
+.cart-ui-total-price-final {
+    font-size: 1.8rem;
+    color: #ffc900;
+    font-weight: 700;
+    margin: 0 15px;
+}
+
+.cart-ui-checkout-btn {
+    background-color: #ffc900;
+    color: #fff;
+    border: none;
+    padding: 10px 25px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 2px;
+}
+.cart-ui-checkout-btn:hover {
+    opacity: .8;
+}

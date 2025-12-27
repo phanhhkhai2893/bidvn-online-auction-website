@@ -1,0 +1,48 @@
+/* 1. Container Toast */
+#toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999; /* Đảm bảo Toast nằm trên cùng */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* 2. Toast Message */
+.toast-message {
+    padding: 20px 40px 20px 20px;
+    background-color: #4CAF50; /* Màu xanh lá cho thành công */
+    color: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+	min-width: 200px;
+    
+    /* Hiệu ứng ẩn/hiện */
+    opacity: 0;
+    transform: translateX(100%); /* Bắt đầu từ ngoài */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* 3. Trạng thái Hiển thị */
+.toast-message.show {
+    opacity: 1;
+    transform: translateX(0); /* Trượt vào vị trí */
+}
+
+/* Định kiểu cho Tiêu đề */
+.toast-title {
+    font-weight: bold; /* Tiêu đề in đậm */
+    font-size: 16px;
+    margin-bottom: 5px; /* Khoảng cách với nội dung */
+    padding-bottom: 3px;
+}
+
+/* Định kiểu cho Nội dung */
+.toast-content {
+    font-size: 14px;
+    font-weight: normal;
+}

@@ -1,0 +1,416 @@
+/* Các màu chính:
+   #ffc107 (Vàng chat/Primary)
+   #3f51b5 (Xanh dương/Secondary - Links, Badges)
+   #e91e63 (Hồng/Đỏ - Giá)
+   #333 (Màu chữ)
+   #f5f5f5 (Nền xám nhạt)
+   #eee (Đường viền)
+*/
+.countdown-container {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	text-align: center;
+	margin: 20px auto;
+	padding: 20px;
+	/* Thay thế var(--color-bg-timer) */
+	background-color: #333333; 
+	/* Thay thế var(--border-radius) */
+	border-radius: 8px; 
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+	max-width: 450px;
+	/* Thay thế var(--color-text-light) */
+	color: #f5f5f5; 
+}
+
+.countdown-container h3 {
+	margin-top: 0;
+	/* Thay thế var(--color-primary) */
+	color: #FFC107; 
+	font-size: 1.2em;
+	text-transform: uppercase;
+}
+
+.countdown-timer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+}
+
+.countdown-block {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 5px;
+	padding: 8px 10px;
+	/* Thay thế var(--color-dark) */
+	background-color: #1e1e1e; 
+	border-radius: 6px;
+	min-width: 60px;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.number {
+	font-size: 2.2em;
+	font-weight: bold;
+	/* Thay thế var(--color-primary) */
+	color: #FFC107; 
+	line-height: 1;
+	font-family: 'Digital', sans-serif; 
+}
+
+.label {
+	font-size: 0.75em;
+	/* Thay thế var(--color-text-light) */
+	color: #f5f5f5; 
+	margin-top: 5px;
+	text-transform: uppercase;
+}
+
+.separator {
+	font-size: 2.5em;
+	font-weight: bold;
+	/* Thay thế var(--color-primary) */
+	color: #FFC107; 
+}
+
+.countdown-message {
+	margin-top: 15px;
+	font-size: 1.1em;
+	color: white;
+	font-weight: 600;
+}
+
+.finished {
+	color: #E53935 !important;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.detail-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* --- BỐ CỤC CHÍNH (2 CỘT) --- */
+.detail-main-content {
+    display: flex; 
+    gap: 20px; /* Thêm khoảng cách giữa 2 cột */
+}
+
+/* --- Cột Hình ảnh (Trái - 40%) --- */
+.detail-gallery { 
+    width: 40%;
+}
+
+.main-image {
+  position: relative;
+  border: 1px solid #eee; 
+  border-radius: 8px;
+  overflow: hidden;
+  width: 100%; /* Chiều rộng hình chữ nhật */
+  height: 500px; /* Chiều cao hình chữ nhật */
+}
+
+.main-image > img {
+  width: 100%; /* Chiều rộng hình chữ nhật */
+  height: 1000px; /* Chiều cao hình chữ nhật */
+  background-color: #cccccc; /* Màu xám */
+  border-radius: 4px; /* Bo góc nhẹ */
+  margin-bottom: 8px; /* Khoảng cách với tên danh mục */
+  /* Căn giữa hình chữ nhật trong khung icon */
+  display: flex;
+}
+
+.main-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.image-count {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.image-menu {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.image-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+}
+.image-nav.left { left: 0; border-radius: 0 4px 4px 0; }
+.image-nav.right { right: 0; border-radius: 4px 0 0 4px; }
+
+
+.thumbnail-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    overflow-x: auto;
+    padding: 5px 0;
+}
+
+.thumbnail {
+    width: 65px;
+    height: 65px;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    background-color: #f0f0f0; 
+    cursor: pointer;
+    flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+}
+
+.thumbnail.active {
+    border-color: #3f51b5; 
+}
+
+/* --- Cột Thông tin (Phải - 60%) --- */
+.detail-details-area {
+    width: 60%;
+}
+
+.detail-header-info h1 {
+    font-size: 24px;
+    margin: 0 0 5px 0;
+    color: #333; 
+    font-weight: 600;
+}
+
+.detail-header-info .specs {
+    font-size: 14px;
+    color: gray;
+    margin: 0 0 10px 0;
+}
+
+.price-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.old-price {
+  font-size: 20px;
+  color: #999; /* price-color */
+  font-weight: 500;
+  font-style: italic;
+  margin-right: 10px;
+}
+
+.price {
+  font-size: 28px;
+  color: #e91e63; /* price-color */
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.label-badge {
+    background-color: #ffc107; /* primary-color */
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+.label-badge.secondary {
+    background-color: #3f51b5; /* secondary-color */
+}
+
+.donation-info, .update-info {
+    font-size: 14px;
+    color: gray;
+    margin-bottom: 5px;
+}
+
+/* --- Khoảng giá thị trường --- */
+.market-price-range {
+    background-color: #f5f5f5; /* light-gray */
+    padding: 15px;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+/* ... (Chi tiết giá thị trường) ... */
+.price-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    position: relative;
+}
+
+.price-bar .bar-fill {
+    flex-grow: 1;
+    height: 8px;
+    background: linear-gradient(to right, #88B04B 0%, #ADD8E6 50%, #007bff 100%); 
+    border-radius: 4px;
+    margin: 0 10px;
+    position: relative;
+}
+
+.current-price-marker {
+    position: absolute;
+    top: -15px;
+    left: 70%; 
+    transform: translateX(-50%);
+    background-color: #3f51b5; 
+    color: white;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    z-index: 10;
+}
+
+/* --- Liên hệ & Chat --- */
+.contact-section {
+    display: flex;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.phone-number {
+    border: 1px solid #eee; 
+    color: #3f51b5; 
+    padding: 12px 20px;
+    border-radius: 8px;
+    flex-grow: 1;
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: white;
+}
+
+.chat-button {
+	background-color: #ffc107;
+  color: #333;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+	padding: 14px 20px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  font-size: 16px;
+}
+
+/* --- Thông tin Người bán --- */
+.seller-info {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    border-top: 1px solid #eee; 
+    border-bottom: 1px solid #eee; 
+}
+/* ... (Seller details) ... */
+.primary-star {
+    color: #ffc107; /* Màu vàng cho ngôi sao */
+}
+.seller-ratings a {
+    color: #3f51b5;
+    text-decoration: none;
+}
+
+.view-shop-button {
+    background-color: white;
+    color: #3f51b5; 
+    border: 1px solid #3f51b5; 
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+/* --- Thanh công cụ Chat --- */
+.chat-toolbar {
+    display: flex;
+    gap: 5px;
+    padding: 10px 0;
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #eee; 
+    margin-bottom: 20px;
+}
+
+.chat-action {
+    background-color: #f5f5f5; 
+    color: #333; 
+    border: 1px solid #eee; 
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+/* --- Nội dung chi tiết (Mô tả, Thông tin, Bình luận) --- */
+
+.detail-tabs {
+    display: flex;
+    border-bottom: 1px solid #eee;
+}
+
+.tab-item {
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    color: gray;
+}
+
+.tab-item.active {
+    color: #333;
+    border-bottom: 2px solid #333;
+}
+
+.detail-description-section, .detail-info-table, .comments-section {
+    padding: 20px 0;
+}
+/* ... (Các phần còn lại giữ nguyên như code trước) ... */
+
+.reply-item .user-avatar.seller-reply {
+    background-color: #3f51b5; 
+    color: white;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .detail-main-content {
+        flex-direction: column; 
+        padding: 10px;
+    }
+
+    .detail-gallery, .detail-details-area {
+        width: 100%; 
+        padding-right: 0;
+    }
+}
